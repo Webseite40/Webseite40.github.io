@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>FashionShop - Registrierung</title>
+  <style>
+    body {
+      background: #E8F0FE;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    .card {
+      background: #ffffff;
+      padding: 36px 40px 32px 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(100, 116, 139, 0.15);
+      width: 400px;
+      box-sizing: border-box;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .header h2 {
+      color: #1A237E;
+      font-weight: 800;
+      font-size: 28px;
+      margin: 0;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    label {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #444;
+    }
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      margin-top: 6px;
+      border: 1.8px solid #90A4AE;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+      background: #F9FAFC;
+      box-sizing: border-box;
+    }
+    input:focus {
+      border-color: #3949AB;
+      outline: none;
+      background: #fff;
+    }
+
+    /* Buttons oben nebeneinander mit Abstand */
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .btn-primary {
+      background: #3949AB;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(57, 73, 171, 0.4);
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: #303F9F;
+    }
+    .btn-secondary {
+      background: #CFD8DC;
+      color: #1A237E;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(207, 216, 220, 0.6);
+      transition: background-color 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background: #B0BEC5;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="btn-container">
+      <button type="button" class="btn-secondary" id="loginBtn">Anmelden</button>
+      <button type="submit" class="btn-primary" form="registerForm">Registrieren</button>
+    </div>
+    <div class="header">
+      <h2>FashionShop Registrierung</h2>
+    </div>
+    <form id="registerForm">
+      <label for="username">Benutzername
+        <input type="text" id="username" required autocomplete="off" />
+      </label>
+      <label for="password">Passwort
+        <input type="password" id="password" required autocomplete="new-password" />
+      </label>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const startTime = Date.now();
+      const form = document.getElementById('registerForm');
+      const loginBtn = document.getElementById('loginBtn');
+  
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const u = document.getElementById('username').value;
+        const p = document.getElementById('password').value;
+        const rt = ((Date.now() - startTime) / 1000).toFixed(2);
+        const url = `login.html?username=${encodeURIComponent(u)}&password=${encodeURIComponent(p)}&regtime=${rt}`;
+        console.log('Redirect to:', url);
+        window.location.href = url;
+      });
+  
+      loginBtn.addEventListener('click', () => {
+        window.location.href = 'login.html';
+      });
+    });
+  </script>
+</body>
+</html>
