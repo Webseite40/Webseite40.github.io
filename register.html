@@ -58,7 +58,6 @@
       background: #fff;
     }
 
-    /* Buttons oben nebeneinander mit Abstand */
     .btn-container {
       display: flex;
       justify-content: flex-end;
@@ -99,19 +98,19 @@
 </head>
 <body>
   <div class="card">
-    <div class="btn-container">
-      <button type="button" class="btn-secondary" id="loginBtn">Anmelden</button>
-      <button type="submit" class="btn-primary" form="registerForm">Registrieren</button>
-    </div>
-    <div class="header">
-      <h2>FashionShop Registrierung</h2>
-    </div>
     <form id="registerForm">
+      <div class="btn-container">
+        <button type="button" class="btn-secondary" id="loginBtn">Anmelden</button>
+        <button type="submit" class="btn-primary">Registrieren</button>
+      </div>
+      <div class="header">
+        <h2>FashionShop Registrierung</h2>
+      </div>
       <label for="username">Benutzername
-        <input type="text" id="username" required autocomplete="off" />
+        <input type="text" id="username" name="username" required autocomplete="off" />
       </label>
       <label for="password">Passwort
-        <input type="password" id="password" required autocomplete="new-password" />
+        <input type="password" id="password" name="password" required autocomplete="new-password" />
       </label>
     </form>
   </div>
@@ -121,7 +120,7 @@
       const startTime = Date.now();
       const form = document.getElementById('registerForm');
       const loginBtn = document.getElementById('loginBtn');
-  
+
       form.addEventListener('submit', e => {
         e.preventDefault();
         const u = document.getElementById('username').value;
@@ -131,7 +130,7 @@
         console.log('Redirect to:', url);
         window.location.href = url;
       });
-  
+
       loginBtn.addEventListener('click', () => {
         window.location.href = 'login.html';
       });
