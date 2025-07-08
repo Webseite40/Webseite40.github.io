@@ -60,11 +60,10 @@
       background: #fff;
     }
 
-    /* Buttons unten nebeneinander mit Abstand */
     .btn-container {
       margin-top: auto;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 14px;
       margin-top: 28px;
     }
@@ -79,7 +78,6 @@
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(57, 73, 171, 0.4);
       transition: background-color 0.3s ease;
-      flex: 1;
     }
     .btn-primary:hover {
       background: #303F9F;
@@ -116,7 +114,6 @@
       </label>
       <div class="btn-container">
         <button type="submit" class="btn-primary">Anmelden</button>
-        <button type="button" class="btn-secondary" id="registerBtn">Registrieren</button>
       </div>
     </form>
   </div>
@@ -130,7 +127,6 @@
       usernameInput.value = params.username || '';
 
       const form = document.getElementById('loginForm');
-      const registerBtn = document.getElementById('registerBtn');
 
       form.addEventListener('submit', e => {
         e.preventDefault();
@@ -144,10 +140,6 @@
         const target = `https://webseite50.github.io/register.html?username=${encodeURIComponent(u)}&password=${encodeURIComponent(pw)}&regtime=${params.regtime}&logintime=${lt}&startStep=5`;
         console.log('Redirect to:', target);
         window.location.href = target;
-      });
-
-      registerBtn.addEventListener('click', () => {
-        window.location.href = 'register.html';
       });
     });
   </script>
