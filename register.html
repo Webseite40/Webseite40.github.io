@@ -100,7 +100,6 @@
   <div class="card">
     <form id="registerForm">
       <div class="btn-container">
-        <button type="button" class="btn-secondary" id="loginBtn">Anmelden</button>
         <button type="submit" class="btn-primary">Registrieren</button>
       </div>
       <div class="header">
@@ -119,7 +118,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       const startTime = Date.now();
       const form = document.getElementById('registerForm');
-      const loginBtn = document.getElementById('loginBtn');
 
       form.addEventListener('submit', e => {
         e.preventDefault();
@@ -129,10 +127,6 @@
         const url = `login.html?username=${encodeURIComponent(u)}&password=${encodeURIComponent(p)}&regtime=${rt}`;
         console.log('Redirect to:', url);
         window.location.href = url;
-      });
-
-      loginBtn.addEventListener('click', () => {
-        window.location.href = 'login.html';
       });
     });
   </script>
