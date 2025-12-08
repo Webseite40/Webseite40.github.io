@@ -96,19 +96,35 @@
 <header>Essenslieferant ABC</header>
 
 <!-- Registrierung -->
-<div id="registerScreen" class="container screen active">
-  <h2>Registrierung</h2>
-  <form id="registerForm">
-    <label>Username</label>
-    <input name="username" required>
-    <label>Passwort</label>
-    <input name="password" type="password" required>
-    <label>Passwort wiederholen</label>
-    <input name="passwordConfirm" type="password" required>
-    <button>Registrieren</button>
-  </form>
-  <p class="error" id="regError"></p>
+<!-- Registrierung -->
+<div id="registerScreen" class="screen active">
+  <div class="main-container">
+
+    <!-- Originaler Registrierungs-Container -->
+    <div class="container">
+      <h2>Registrierung</h2>
+      <form id="registerForm">
+        <label>Username</label>
+        <input name="username" required>
+        <label>Passwort</label>
+        <input name="password" type="password" required>
+        <label>Passwort wiederholen</label>
+        <input name="passwordConfirm" type="password" required>
+        <button>Registrieren</button>
+      </form>
+      <p class="error" id="regError"></p>
+    </div>
+
+    <!-- 🟣 INFO-BOX (NEU) -->
+    <div class="info-box">
+      <h3>Hinweis</h3>
+      <p>Bitte beachten Sie: Diese Registrierung dient ausschließlich Studienzwecken.</p>
+      <p>Ihre eingegebenen Daten werden nur zur Auswertung der Untersuchung verwendet.</p>
+    </div>
+
+  </div>
 </div>
+
 
 <!-- Login -->
 <div id="loginScreen" class="container screen">
@@ -134,7 +150,7 @@
 <div id="loginSuccessScreen" class="container screen">
   <h2>Login erfolgreich!</h2>
   <p>Sie sind eingeloggt – Bestellung abgeschlossen!</p>
-  <p>Als nächste müssen Sie dei Umfrage noch beantworten. Den Link finden Sie in der Email oder gleich hier:</p>
+  <p>Als nächste müssen Sie die Umfrage noch beantworten. Den Link finden Sie hier: https://study.hcs.ruhr-uni-bochum.de/jfe/form/SV_3IWHPu7egUatFWu oder in der Email</p>
 </div>
 
 <script>
